@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-s-plus-bg: #05070a; 
+  /* Yellow Glassmorphism Tint */
+  --color-s-plus-card: rgba(254, 240, 138, 0.05); 
+  --color-s-plus-yellow: #fde047; /* Kuning murni */
+  --color-s-plus-yellow-glow: rgba(253, 224, 71, 0.4);
+  
+  --font-arabic: "Amiri", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  /* Background dengan aura kuning di pojok */
+  background: radial-gradient(circle at 0% 0%, rgba(253, 224, 71, 0.08), #05070a 40%);
+  min-height: 100vh;
+}
+
+body {
+  color: #f8fafc;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism khas S+ dengan Yellow Border */
+.glass-yellow {
+  @apply backdrop-blur-xl border border-white/5 shadow-2xl;
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-yellow:hover {
+  border-color: rgba(253, 224, 71, 0.3);
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.1);
+}
+
+.font-arabic { font-family: var(--font-arabic); }
