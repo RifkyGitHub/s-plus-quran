@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Search, LayoutGrid, Sun, Moon } from 'lucide-react';
+import { Search, LayoutGrid, Sun, Moon, ImportIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SurahList from './components/SurahList';
 import SurahDetail from './components/SurahDetail';
+import './index.css'
 
 const App = () => {
   const [surahs, setSurahs] = useState([]);
@@ -34,7 +35,7 @@ const App = () => {
         {/* HEADER */}
         <header className="flex items-center justify-between mb-12 mt-4">
           <div className="flex items-center gap-4 cursor-pointer" onClick={() => {setSelectedSurahId(null); setSearch('')}}>
-            <img src="/logo1.png" alt="S+" className="w-16 h-16 object-contain drop-shadow-[0_0_15px_rgba(253,224,71,0.4)]" />
+            <img src="./logo1.png" alt="S+" className="w-16 h-16 object-contain drop-shadow-[0_0_15px_rgba(253,224,71,0.4)]" />
             <div className="hidden sm:block">
                <h1 className={`text-3xl font-black tracking-tighter italic ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>S+ <span className="text-s-plus-yellow not-italic">QURAN</span></h1>
                <p className="text-[10px] uppercase tracking-[0.3em] text-s-plus-yellow/60 font-bold">Premium Digital Al-Quran</p>
@@ -97,14 +98,14 @@ const App = () => {
 
 export default App;
 
-let count = 0; 
+// let count = 0; 
 
-function Counter() { 
-  const [setCount, count]  = useState(0);
-  const handleAdd = () => {
-    setCount(count + 1);
-  }}
-return <button onClick={handleAdd}> Angka: {count}</button>;
+// function Counter() { 
+//   const [setCount, count]  = useState(0);
+//   const handleAdd = () => {
+//     setCount(count + 1);
+//   }}
+// return <button onClick={handleAdd}> Angka: {count}</button>;
 
 
 

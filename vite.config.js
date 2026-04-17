@@ -1,23 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        's-plus-bg': '#020617',
-        's-plus-card': '#0f172a',
-        's-plus-accent': '#10b981',
-      },
-      fontFamily: {
-        arabic: ['Amiri', 'serif'],
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
-      }
-    },
-  },
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
   plugins: [react()],
-  base: "/s-plus-quran/"
-  
-}
+  base: "/s-plus-quran/", // Pastikan ini sesuai dengan nama repo GitHub kamu
+})

@@ -1,38 +1,72 @@
+/* 1. Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap');
+
+/* 2. Import Tailwind v4 Core */
 @import "tailwindcss";
 
+/* 3. Definisi Tema (Khusus Tailwind v4) */
 @theme {
-  --color-s-plus-bg: #05070a; 
-  /* Yellow Glassmorphism Tint */
-  --color-s-plus-card: rgba(254, 240, 138, 0.05); 
-  --color-s-plus-yellow: #fde047; /* Kuning murni */
+  --color-s-plus-bg: #05070a;
+  --color-s-plus-card: rgba(254, 240, 138, 0.05);
+  --color-s-plus-yellow: #fde047;
   --color-s-plus-yellow-glow: rgba(253, 224, 71, 0.4);
   
   --font-arabic: "Amiri", serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
 }
 
+/* 4. Global Styles & Background */
 :root {
-  /* Background dengan aura kuning di pojok */
+  /* Background gelap dengan aksen aura kuning di pojok kiri atas */
   background: radial-gradient(circle at 0% 0%, rgba(253, 224, 71, 0.08), #05070a 40%);
   min-height: 100vh;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   color: #f8fafc;
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glassmorphism khas S+ dengan Yellow Border */
+/* 5. Custom Utility Classes */
+
+/* Efek Glassmorphism dengan border kuning tipis saat hover */
 .glass-yellow {
   @apply backdrop-blur-xl border border-white/5 shadow-2xl;
   background: rgba(15, 23, 42, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .glass-yellow:hover {
   border-color: rgba(253, 224, 71, 0.3);
   box-shadow: 0 0 20px rgba(253, 224, 71, 0.1);
+  transform: translateY(-2px);
 }
 
-.font-arabic { font-family: var(--font-arabic); }
+/* Helper untuk Font Arab */
+.font-arabic {
+  font-family: var(--font-arabic);
+  direction: rtl; /* Menyesuaikan penulisan Arab dari kanan ke kiri */
+}
+
+/* Scrollbar biar lebih keren (opsional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fde047;
+} 
